@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Shortener</title>
+    <style>
+      /* styles.css */
+
+      /* General page styling */
+      /* styles.css */
+
+      /* General page styling */
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1920&auto=format&fit=crop");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        color: #333;
+      }
+
+      /* Heading styling */
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: #ffffff; /* White for contrast against dark background */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for readability */
+      }
+
+      /* Form styling */
+      form {
+        background-color: #94ddbc; /* Decent England yellow (amber) */
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 400px;
+        opacity: 0.95; /* Slight transparency to blend with background */
+      }
+
+      /* Label styling */
+      label {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #1a237e; /* Dark navy for contrast on yellow */
+      }
+
+      /* Input field styling */
+      input[type="text"] {
+        width: 100%;
+        padding: 0.8rem;
+        margin: 0.5rem 0 1rem 0;
+        border: 1px solid #1a237e;
+        border-radius: 4px;
+        font-size: 1rem;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+        background-color: #fffde7; /* Light yellow for input background */
+      }
+
+      input[type="text"]:focus {
+        border-color: #3f51b5; /* Indigo for focus */
+        outline: none;
+        box-shadow: 0 0 5px rgba(63, 81, 181, 0.3);
+      }
+
+      /* Button styling */
+      button {
+        width: 100%;
+        padding: 0.8rem;
+        background-color: #7b886b; /* Indigo to complement yellow */
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #303f9f; /* Darker indigo on hover */
+      }
+
+      /* Short URL paragraph styling */
+      p {
+        margin-top: 1.5rem;
+        font-size: 1rem;
+        color: #ffffff; /* White for contrast */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* Semi-transparent background for readability */
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+      }
+
+      p a {
+        color: #bbdefb; /* Light blue for links */
+        text-decoration: none;
+      }
+
+      p a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive design */
+      @media (max-width: 500px) {
+        form {
+          padding: 1.5rem;
+          max-width: 90%;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>URL Shortener</h1>
+    <form action="/shorten" method="POST">
+      <label for="url">Enter URL:</label>
+      <input type="text" id="url" name="url" required />
+      <br />
+      <br />
+      <button type="submit">Shorten</button>
+    </form>
+
+    <% if ( shortUrl) { %>
+    <p>
+      Short URL:<a href="<%= shortUrl %>" target="_blank" />
+      <%= shortUrl %>
+    </p>
+    <% } %>
+  </body>
+</html>
