@@ -19,6 +19,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/shorten", async (req, res) => {
+  const { name, email } = req.body;
   const longURl = req.body.url;
   const shortCode = shortid.generate();
   // const baseUrl = `${req.protocol}://${req.get("host")}`;
@@ -27,6 +28,8 @@ app.post("/shorten", async (req, res) => {
   const shortUrl = `http://localhost:1000/${shortCode}`; // Change this to your actual domain
 
   const newUrl = new UrlShortener({
+    name: name,
+    email: email,
     originalUrl: longURl,
     shortCode: shortCode,
   });
