@@ -1,4 +1,3 @@
-import { name } from "ejs";
 import mongoose from "mongoose";
 
 const urlShortenerSchema = new mongoose.Schema({
