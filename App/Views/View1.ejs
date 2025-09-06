@@ -128,9 +128,18 @@
   </head>
   <body>
     <h1>URL Shortener</h1>
-    <form action="/shorten" method="POST">
+
+    <form action="/url/shorten" method="POST">
+      <label for="name">Enter Name:</label>
+      <input type="text" id="name" name="name" required />
+      <br /><br />
+      <label for="email">Enter Email:</label>
+      <input type="email" id="email" name="email" required />
+      <br />
+      <br />
       <label for="url">Enter URL:</label>
       <input type="text" id="url" name="url" required />
+
       <br />
       <br />
       <button type="submit">Shorten</button>

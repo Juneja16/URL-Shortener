@@ -1,6 +1,14 @@
 import mongoose from "mongoose";
 
 const urlShortenerSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
   originalUrl: {
     type: String,
     required: true,
